@@ -1,0 +1,25 @@
+{
+  "name": "mediastore/backend",
+  "description": "Mediastore backend - Slim 4 + Medoo starter",
+  "type": "project",
+  "require": {
+    "php": ">=8.1",
+    "slim/slim": "^4.13",
+    "slim/psr7": "^1.6",
+    "catfan/medoo": "^2.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "scripts": {
+    "start": "php -S 0.0.0.0:8000 -t public",
+    "post-install-cmd": [
+      "@php -r \"echo 'Composer install finished.\\n';\""
+    ],
+    "post-update-cmd": [
+      "@php -r \"echo 'Composer update finished.\\n';\""
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+# Slim 4 front controller for Apache
+# Redirect all requests to public/index.php except for existing files/dirs
+
+RewriteEngine On
+
+# Serve existing files directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Otherwise, route everything to index.php (Slim)
+RewriteRule ^ index.php [QSA,L]
